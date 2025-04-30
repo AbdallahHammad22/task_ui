@@ -10,14 +10,14 @@ class QuickActionsWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      padding: const EdgeInsets.all(10),
+      padding: const EdgeInsets.all(14),
       decoration: BoxDecoration(
         color: AppColors.white,
         borderRadius: BorderRadius.circular(10),
       ),
       child: Row(
         children: [
-          Image.asset(iconPath, height: 30, width: 30,color: AppColors.pink,),
+          Image.asset(iconPath, height: 25, width: 25,color: AppColors.pink,),
           const SizedBox(width: 10),
            Text(
             text,

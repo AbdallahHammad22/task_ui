@@ -197,54 +197,92 @@ class DashboardPage extends StatelessWidget {
             const SizedBox(height: 20),
             // Quick Actions Section ........................................
             Container(
-              padding: const EdgeInsets.all(10),
-              decoration: BoxDecoration(
-                color: AppColors.lightgrey,
-                borderRadius: BorderRadius.circular(10),
-              ),
-              child: Column(
-                children: [
-                  Row(
-                    children: [
-                      const Text(
-                        'Quick Actions',
-                        style: TextStyle(
-                          fontSize: 16,
-                          fontWeight: FontWeight.w500,
-                          color: AppColors.darkGrey,
+                padding: const EdgeInsets.all(10),
+                decoration: BoxDecoration(
+                  color: AppColors.lightgrey,
+                  borderRadius: BorderRadius.circular(10),
+                ),
+                child: Column(
+                  children: [
+                    Row(
+                      children: [
+                        const Text(
+                          'Quick Actions',
+                          style: TextStyle(
+                            fontSize: 16,
+                            fontWeight: FontWeight.w500,
+                            color: AppColors.darkGrey,
+                          ),
                         ),
-                      ),
-                      const Spacer(),
-                      TextButton(
-                        onPressed: () {
-                          // Handle "Edit" button press
-                        },
-                        child: const Icon(Icons.edit, color: AppColors.black),
-                      ),
-                    ],
-                  ),
-                  const SizedBox(height: 10),
-                  SizedBox(
-                    height: 250,
-                    child: GridView.count(
-                      crossAxisCount: 2,
-                      crossAxisSpacing: 10.0,
-                      mainAxisSpacing: 10.0,
-                      childAspectRatio: 2.5,
-                      shrinkWrap: false,
-                      physics: const NeverScrollableScrollPhysics(),
-                      children: List.generate(
-                        6,
-                        (index) => const QuickActionsWidget(
-                          iconPath: AppStrings.statusIcon,
-                          text: 'Orders',
+                        const Spacer(),
+                        TextButton(
+                          onPressed: () {
+                            // Handle "Edit" button press
+                          },
+                          child: const Icon(Icons.edit, color: AppColors.black),
                         ),
-                      ),
+                      ],
                     ),
-                  ),
-                ],
-              ),
-            )
+                    const SizedBox(height: 10),
+                    const Column(children: [
+                      Row(
+                        children: [
+                          Expanded(
+                            child: QuickActionsWidget(
+                              iconPath: AppStrings.cartIcon,
+                              text: 'Orders',
+                            ),
+                          ),
+                          SizedBox(width: 10),
+                          Expanded(
+                            child: QuickActionsWidget(
+                              iconPath: AppStrings.productIcon,
+                              text: 'Products',
+                            ),
+                          ),
+                        ],
+                      ),
+                      SizedBox(height: 10),
+                      Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        children: [
+                          Expanded(
+                            child: QuickActionsWidget(
+                              iconPath: AppStrings.offersIcon,
+                              text: 'Offers',
+                            ),
+                          ),
+                          SizedBox(width: 10),
+                          Expanded(
+                            child: QuickActionsWidget(
+                              iconPath: AppStrings.spotlightIcon,
+                              text: 'Spotlight',
+                            ),
+                          ),
+                        ],
+                      ),
+                      SizedBox(height: 10),
+                      Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        children: [
+                          Expanded(
+                            child: QuickActionsWidget(
+                              iconPath: AppStrings.discountIcon,
+                              text: 'Coupons',
+                            ),
+                          ),
+                          SizedBox(width: 10),
+                          Expanded(
+                            child: QuickActionsWidget(
+                              iconPath: AppStrings.complaintsIcon,
+                              text: 'Complaints',
+                            ),
+                          ),
+                        ],
+                      ),
+                    ]),
+                  ],
+                ))
           ],
         ),
       ),
